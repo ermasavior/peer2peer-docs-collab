@@ -1,5 +1,7 @@
-import CRDT.CRDT;
-import VersionVector.VersionVector;
+package app;
+
+import app.CRDT.CRDT;
+import app.VersionVector.VersionVector;
 
 public class Controller {
     // bikin input array crdt langsung input version vectornya
@@ -46,7 +48,7 @@ public class Controller {
     }
 
     public void printOperation(){
-        System.out.println("<<< PRINT Operation (site_id, value, type, position, counter) >>>");
+        System.out.println("<<< PRINT app.Operation (site_id, value, type, position, counter) >>>");
         for (int i = 0; i < this.operation.length; i++) {
             System.out.println(this.operation[i].site_id);
             System.out.println(this.operation[i].value);
@@ -57,7 +59,7 @@ public class Controller {
         }
     }
 
-    // Allocate array baru untuk updated CRDT
+    // Allocate array baru untuk updated app.CRDT
     public void copyCRDT(CRDT crdt[]) {
         this.crdt = new CRDT[crdt.length];
         for (int i = 0; i < crdt.length; i++) {
@@ -113,7 +115,7 @@ public class Controller {
         }
     }
 
-    // Melakukan pembaharuan CRDT
+    // Melakukan pembaharuan app.CRDT
     public void updateCRDT(Operation OP) {
         if (OP.type == "Insert") {
             CRDT tempCRDT[] = new CRDT[this.crdt.length + 1];
@@ -125,7 +127,7 @@ public class Controller {
                     tempCRDT[i] = this.crdt[i];
                 }
             }
-            tempCRDT[OP.position] = new CRDT(OP.site_id, OP.value, OP.position, OP.counter);
+            tempCRDT[OP.position] = new CRDT(OP.site_id, OP.value, OP.position);
             copyCRDT(tempCRDT);
             updateVersionVector(OP);
         } else if (OP.type == "Delete") {
@@ -215,12 +217,12 @@ public class Controller {
         return found;
     }
 
-    // Melakukan verifikasi operasi yang diterima terhadap CRDT dan Version Vector miliknya
-    // Verifikasi position di CRDT
+    // Melakukan verifikasi operasi yang diterima terhadap app.CRDT dan Version Vector miliknya
+    // Verifikasi position di app.CRDT
     // Verifikasi counter di Version Vector
     public boolean isVerified(Operation op) {
-        // Max Position CRDT
-        int max = 0;
+        // Max Position app.CRDT
+        float max = 0;
         if (this.crdt.length != 0) {
             for(int i = 0; i < this.crdt.length; i++) {
                 if (this.crdt[i].position > max) {
@@ -247,6 +249,14 @@ public class Controller {
             verified = true;
         }
         return (op.position <= max && verified);
+    }
+
+    public String CRDTToString() {
+        String editorText = "";
+        for(int i = 0; i < this.crdt.length; i++) {
+            editorText += this.crdt[i].value;
+        }
+        return editorText;
     }
 
     //    Menerima notify operasi-operasi yang diterapkan ke text editor
