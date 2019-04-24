@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="gui.GUIController">
+            fx:controller="com.sister.gui.GUIController">
    <children>
        <Text layoutX="123.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRDT Collaborative Editor"
              textAlignment="CENTER">

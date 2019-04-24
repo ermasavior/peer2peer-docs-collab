@@ -1,4 +1,4 @@
-package Messenger;
+package com.sister.Messenger;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

@@ -1,4 +1,4 @@
-package app.VersionVector;
+package com.sister.VersionVector;
 
 public class VersionVector {
     public int site_id;

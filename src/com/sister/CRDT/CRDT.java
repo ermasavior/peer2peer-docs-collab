@@ -1,4 +1,4 @@
-package app.CRDT;
+package com.sister.CRDT;
 
 public class CRDT {
     public int site_id;

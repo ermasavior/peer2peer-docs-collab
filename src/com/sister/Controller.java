@@ -1,7 +1,7 @@
-package app;
+package com.sister;
 
-import app.CRDT.CRDT;
-import app.VersionVector.VersionVector;
+import com.sister.CRDT.CRDT;
+import com.sister.VersionVector.VersionVector;
 
 public class Controller {
     // bikin input array crdt langsung input version vectornya
@@ -48,7 +48,7 @@ public class Controller {
     }
 
     public void printOperation(){
-        System.out.println("<<< PRINT app.Operation (site_id, value, type, position, counter) >>>");
+        System.out.println("<<< PRINT Operation (site_id, value, type, position, counter) >>>");
         for (int i = 0; i < this.operation.length; i++) {
             System.out.println(this.operation[i].site_id);
             System.out.println(this.operation[i].value);

@@ -1,4 +1,4 @@
-package gui;
+package com.sister.gui;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
