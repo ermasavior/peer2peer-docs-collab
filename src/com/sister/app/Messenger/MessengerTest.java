@@ -1,6 +1,7 @@
-package com.sister.Messenger;
+package com.sister.app.Messenger;
 
-import com.sister.Operation;
+import com.sister.app.Operation;
+
 import java.io.IOException;
 
 public class MessengerTest {
