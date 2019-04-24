@@ -42,7 +42,7 @@
                            <font>
                               <Font size="16.0" />
                            </font></Label>
-                        <TextArea fx:id="editorTextArea" layoutY="62.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="500.0" promptText="Type here" wrapText="true">
+                        <TextArea fx:id="editorTextArea" layoutY="62.0" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#addOperation" prefHeight="386.0" prefWidth="500.0" promptText="Type here" wrapText="true">
                            <cursor>
                               <Cursor fx:constant="TEXT" />
                            </cursor>

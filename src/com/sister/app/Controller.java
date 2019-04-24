@@ -18,6 +18,25 @@ public class Controller {
         this.versionVector = versionVector;
     }
 
+    public Controller() {
+        this.crdt = new CRDT[0];
+        this.versionVector = new VersionVector[0];
+        this.deleteBuffer = new Operation[0];
+        this.operation = new Operation[0];
+    }
+
+    public CRDT[] getCrdt() {
+        return crdt;
+    }
+
+    public Operation[] getOperation() {
+        return operation;
+    }
+
+    public VersionVector[] getVersionVector() {
+        return versionVector;
+    }
+
     public void printCRDT(){
         System.out.println("<<< PRINT CRDT (site_id, value, position) >>>");
         for (int i = 0; i < this.crdt.length; i++) {
@@ -133,6 +152,7 @@ public class Controller {
         } else if (OP.type == "Delete") {
             CRDT tempCRDT[] = new CRDT[this.crdt.length - 1];
             for (int i = 0; i < this.crdt.length; i++) {
+                System.out.println(i);
                 if (i > OP.position) {
                     this.crdt[i].position --;
                     tempCRDT[i - 1] = this.crdt[i];
@@ -181,9 +201,17 @@ public class Controller {
     }
 
     // Parameter operasi selalu 'Delete'
-    public void delDeleteBuffer() {
+    public void delDeleteBuffer(Operation op) {
         Operation deleteBufferTemp[] = new Operation[this.deleteBuffer.length - 1];
+        int j = 0;
         for (int i = 0; i < this.deleteBuffer.length - 1; i++) {
+            if (op.site_id == this.deleteBuffer[i].site_id && op.value == this.deleteBuffer[i].value && op.position == this.deleteBuffer[i].position && op.type == this.deleteBuffer[i].type && op.counter == this.deleteBuffer[i].counter) {
+                j++;
+            }
+            if(j < this.operation.length) {
+                deleteBufferTemp[i] = this.operation[j];
+            }
+            j++;
             deleteBufferTemp[i] = this.deleteBuffer[i+1];
         }
         copyDeleteBuffer(deleteBufferTemp);
@@ -246,8 +274,10 @@ public class Controller {
             j++;
         }
         if (!found && op.counter == 1) {
+
             verified = true;
         }
+        System.out.println("Cek verified " + verified);
         return (op.position <= max && verified);
     }
 
@@ -266,6 +296,32 @@ public class Controller {
     //    Meminta messenger untuk mengirim operasi-operasi tersebut
     //    Menerima notify operasi dari messenger
 
+    public void apply(Operation op) {
+        addOperation(op);
+        int i = 0;
+        while (i < operation.length) {
+//            if (isVerified(op)) {
+                if ((operation[i].type == "Delete" && !isDeleteNotAllowed()) || operation[i].type == "Insert") {
+                    System.out.println("Not Delete Buffer");
+                    updateCRDT(operation[i]);
+                    System.out.println("update?");
+                    delOperation(operation[i]);
+                } else {
+                    System.out.println("Enter Delete Buffer");
+                    addDeleteBuffer(operation[i]);
+                }
+//            }
+            int j = 0;
+            while(deleteBuffer.length != 0) {
+                if (!isDeleteNotAllowed()) {
+                    updateCRDT(deleteBuffer[j]);
+                    delDeleteBuffer(deleteBuffer[j]);
+                }
+            }
+            i++;
+        }
+        printVersionVector();
+    }
     public static void main (String[] args) {
         System.out.println("COBAAA");
         CRDT crdt[] = new CRDT[0];

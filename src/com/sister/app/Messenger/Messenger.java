@@ -46,6 +46,7 @@ public class Messenger extends Thread {
     @Override
     public void run() {
         try {
+            System.out.println(InetAddress.getLocalHost());
             MessengerId++;
             System.out.println("Running");
             System.out.println("Id: " + MessengerId);
