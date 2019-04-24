@@ -1,4 +1,4 @@
-package com.sister;
+package com.sister.app;
 
 import java.io.Serializable;
 

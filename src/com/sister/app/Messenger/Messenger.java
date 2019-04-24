@@ -1,9 +1,9 @@
-package com.sister.Messenger;
+package com.sister.app.Messenger;
 
-import com.sister.CRDT.CRDT;
-import com.sister.Controller;
-import com.sister.Operation;
-import com.sister.VersionVector.VersionVector;
+import com.sister.app.CRDT.CRDT;
+import com.sister.app.Controller;
+import com.sister.app.Operation;
+import com.sister.app.VersionVector.VersionVector;
 
 import java.io.*;
 import java.net.*;
@@ -21,7 +21,6 @@ public class Messenger extends Thread {
         byte[] buffer = new byte[1024];
         MulticastSocket socket = new MulticastSocket(port);
         InetAddress group = InetAddress.getByName(ip);
-        socket.setInterface(InetAddress.getByName(InetAddress.getLocalHost().getHostAddress()));
         socket.joinGroup(group);
         while (true) {
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);

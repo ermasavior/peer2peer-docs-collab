@@ -1,7 +1,7 @@
-package com.sister;
+package com.sister.app;
 
-import com.sister.CRDT.CRDT;
-import com.sister.VersionVector.VersionVector;
+import com.sister.app.CRDT.CRDT;
+import com.sister.app.VersionVector.VersionVector;
 
 public class Controller {
     // bikin input array crdt langsung input version vectornya
