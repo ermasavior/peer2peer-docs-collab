@@ -16,12 +16,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class GUIController {
+
     private MainApp mainApp;
     private String collaborationCode = "";
-
-//    public GUIController() throws IOException {
-//        this.mainApp = new MainApp();
-//    }
 
     @FXML
     public TextField joinTextField;
@@ -35,11 +32,18 @@ public class GUIController {
     @FXML
     public ListView userListView;
 
+    public GUIController() throws IOException {
+        this.mainApp = new MainApp();
+    }
+
     @FXML
     public void goToNewDocs(ActionEvent actionEvent) throws IOException {
         this.mainApp = new MainApp();
         System.out.println("Collab"+collaborationCode);
         goToNewPage("EditorWindow.fxml");
+
+        GUIThread guiThread = new GUIThread(this.mainApp, this.editorTextArea);
+        guiThread.start();
     }
 
     @FXML
@@ -48,6 +52,9 @@ public class GUIController {
         this.collaborationCode = joinTextField.getText();
         System.out.println("Join docs: " + this.collaborationCode);
         goToNewPage("EditorWindow.fxml");
+
+        GUIThread guiThread = new GUIThread(this.mainApp, this.editorTextArea);
+        guiThread.start();
     }
 
     @FXML
@@ -58,17 +65,22 @@ public class GUIController {
 
         if (keyCode == KeyCode.BACK_SPACE) {
             int idx = this.editorTextArea.getCaretPosition();
-            System.out.println(idx);
+            System.out.println(idx-1);
             System.out.println("Backspace pressed");
             type = "Delete";
             newChar = '0';
-            this.mainApp.sendOperation(type, idx, newChar);
+            this.mainApp.sendOperation(type, idx-1, newChar);
+            System.out.println(this.mainApp.getCRDTText());
+
         } else if (!(keyCode.isFunctionKey() || keyCode.isArrowKey() || keyCode.isMediaKey() || keyCode.isModifierKey())) {
             type = "Insert";
             int idx = this.editorTextArea.getCaretPosition();
             newChar = kEvent.getText().charAt(0);
             System.out.println(idx);
             System.out.println(newChar);
+            if (this.mainApp != null) {
+                System.out.println("g null");
+            }
             this.mainApp.sendOperation(type, idx, newChar);
             System.out.println(this.mainApp.getCRDTText());
         }
@@ -83,6 +95,28 @@ public class GUIController {
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+}
+
+class GUIThread extends Thread {
+
+    private MainApp mainApp;
+    public TextArea editorTextArea;
+
+    public GUIThread(MainApp mainApp, TextArea editorTextArea) {
+        this.mainApp = mainApp;
+        this.editorTextArea = editorTextArea;
+    }
+
+    @Override
+    public void run() {
+        while(true) {
+            String CRDTText = this.mainApp.getCRDTText();
+//            System.out.println("CEKKKK "+CRDTText);
+            if (this.editorTextArea != null) {
+//                this.editorTextArea.setText(CRDTText);
+            }
         }
     }
 }

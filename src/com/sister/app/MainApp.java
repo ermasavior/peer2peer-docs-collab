@@ -12,7 +12,7 @@ public class MainApp {
 
     public MainApp() throws IOException {
         this.appController = new Controller();
-        this.appMessenger = new Messenger();
+        this.appMessenger = new Messenger(this.appController);
         this.site_id = 0; //Minta messenger
         this.counter = 0;
 
@@ -24,7 +24,7 @@ public class MainApp {
         //TODO: Manggil messenger
 
         //TODO: Add Controller
-        this.appController.addOperation(op);
+        this.appController.apply(op);
         counter++;
     }
 
