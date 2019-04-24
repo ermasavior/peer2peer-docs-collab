@@ -1,6 +1,8 @@
 package com.sister.app;
 
-public class Operation {
+import java.io.Serializable;
+
+public class Operation implements Serializable {
     //    site-id: sumber operasi
     //    value: karakter
     //    type: tipe operasi
@@ -17,5 +19,16 @@ public class Operation {
         type = t;
         position = p;
         counter = c;
+    }
+
+    @Override
+    public String toString() {
+        return "Operation{" +
+                "site_id=" + site_id +
+                ", value=" + value +
+                ", type='" + type + '\'' +
+                ", position=" + position +
+                ", counter=" + counter +
+                '}';
     }
 }
