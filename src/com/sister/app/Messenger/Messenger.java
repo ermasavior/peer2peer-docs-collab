@@ -10,8 +10,6 @@ import java.io.*;
 import java.net.*;
 
 public class Messenger extends Thread {
-    public static int MessengerId = 0;
-
     private Controller controller;
 
     public Messenger(Controller c){
@@ -32,10 +30,12 @@ public class Messenger extends Thread {
                 Operation messageClass = (Operation) iStream.readObject();
                 iStream.close();
                 System.out.println(messageClass.toString());
-                controller.addOperation(messageClass);
-                controller.apply(messageClass);
-                System.out.println("CRDT::"  + controller.CRDTToString());
-                GUIController.guiController.updateText(controller.CRDTToString());
+                if(!packet.getAddress().equals(InetAddress.getLocalHost())){
+                    controller.addOperation(messageClass);
+                    controller.apply(messageClass);
+                    System.out.println("CRDT::"  + controller.CRDTToString());
+                    GUIController.guiController.updateText(controller.CRDTToString());
+                }
             } catch (Exception e) {
                 System.out.println("error 1");
                 e.printStackTrace();
@@ -51,9 +51,7 @@ public class Messenger extends Thread {
     public void run() {
         try {
             System.out.println(InetAddress.getLocalHost());
-            MessengerId++;
             System.out.println("Running");
-            System.out.println("Id: " + MessengerId);
             receiveUDPMessage("230.0.0.0", 4444);
         } catch (IOException ex) {
             ex.printStackTrace();
