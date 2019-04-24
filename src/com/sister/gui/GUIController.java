@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class GUIController {
-
+    public static GUIController guiController;
     private MainApp mainApp;
     private String collaborationCode = "";
 
@@ -34,31 +34,28 @@ public class GUIController {
 
     public GUIController() throws IOException {
         this.mainApp = new MainApp();
+        GUIController.guiController = this;
+    }
+
+    public void updateText(String text){
+        this.editorTextArea.setText(text);
     }
 
     @FXML
     public void goToNewDocs(ActionEvent actionEvent) throws IOException {
-        this.mainApp = new MainApp();
         System.out.println("Collab"+collaborationCode);
         goToNewPage("EditorWindow.fxml");
-
-        GUIThread guiThread = new GUIThread(this.mainApp, this.editorTextArea);
-        guiThread.start();
     }
 
     @FXML
     public void goToJoinDocs(ActionEvent actionEvent) throws IOException {
-        this.mainApp = new MainApp();
         this.collaborationCode = joinTextField.getText();
         System.out.println("Join docs: " + this.collaborationCode);
         goToNewPage("EditorWindow.fxml");
-
-        GUIThread guiThread = new GUIThread(this.mainApp, this.editorTextArea);
-        guiThread.start();
     }
 
     @FXML
-    public void addOperation (KeyEvent kEvent) {
+    public void addOperation (KeyEvent kEvent) throws IOException {
         KeyCode keyCode = kEvent.getCode();
         String type;
         char newChar;

@@ -4,6 +4,7 @@ import com.sister.app.CRDT.CRDT;
 import com.sister.app.Controller;
 import com.sister.app.Operation;
 import com.sister.app.VersionVector.VersionVector;
+import com.sister.gui.GUIController;
 
 import java.io.*;
 import java.net.*;
@@ -32,6 +33,9 @@ public class Messenger extends Thread {
                 iStream.close();
                 System.out.println(messageClass.toString());
                 controller.addOperation(messageClass);
+                controller.apply(messageClass);
+                System.out.println("CRDT::"  + controller.CRDTToString());
+                GUIController.guiController.updateText(controller.CRDTToString());
             } catch (Exception e) {
                 System.out.println("error 1");
                 e.printStackTrace();

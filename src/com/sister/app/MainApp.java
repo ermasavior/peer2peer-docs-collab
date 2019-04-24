@@ -19,10 +19,10 @@ public class MainApp {
         this.appMessenger.start();
     }
 
-    public void sendOperation(String type, int pos, char value) {
+    public void sendOperation(String type, int pos, char value) throws IOException {
         Operation op = new Operation(site_id, value, type, pos, counter);
         //TODO: Manggil messenger
-
+        Messenger.broadcast(op);
         //TODO: Add Controller
         this.appController.apply(op);
         counter++;
