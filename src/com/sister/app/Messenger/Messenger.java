@@ -30,8 +30,7 @@ public class Messenger extends Thread {
                 Operation messageClass = (Operation) iStream.readObject();
                 iStream.close();
                 System.out.println(messageClass.toString());
-                if(!packet.getAddress().equals(InetAddress.getLocalHost())){
-                    controller.addOperation(messageClass);
+                if(messageClass.getSite_id() != controller.site_id){
                     controller.apply(messageClass);
                     System.out.println("CRDT::"  + controller.CRDTToString());
                     GUIController.guiController.updateText(controller.CRDTToString());

@@ -62,11 +62,11 @@ public class GUIController {
 
         if (keyCode == KeyCode.BACK_SPACE) {
             int idx = this.editorTextArea.getCaretPosition();
-            System.out.println(idx-1);
+            System.out.println(idx);
             System.out.println("Backspace pressed");
             type = "Delete";
             newChar = '0';
-            this.mainApp.sendOperation(type, idx-1, newChar);
+            this.mainApp.sendOperation(type, idx, newChar);
             System.out.println(this.mainApp.getCRDTText());
 
         } else if (!(keyCode.isFunctionKey() || keyCode.isArrowKey() || keyCode.isMediaKey() || keyCode.isModifierKey())) {

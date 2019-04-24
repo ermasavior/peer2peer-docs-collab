@@ -3,6 +3,8 @@ package com.sister.app;
 import com.sister.app.CRDT.CRDT;
 import com.sister.app.VersionVector.VersionVector;
 
+import java.util.Random;
+
 public class Controller {
     // bikin input array crdt langsung input version vectornya
     // counter dari node
@@ -10,12 +12,14 @@ public class Controller {
     private Operation deleteBuffer[];
     private Operation operation[];
     private VersionVector versionVector[];
+    public int site_id;
 
     public Controller(CRDT crdt[], Operation deleteBuffer[], Operation operation[], VersionVector versionVector[]) {
         this.crdt = crdt;
         this.deleteBuffer = deleteBuffer;
         this.operation = operation;
         this.versionVector = versionVector;
+        this.site_id = (new Random()).nextInt();
     }
 
     public Controller() {
@@ -23,6 +27,7 @@ public class Controller {
         this.versionVector = new VersionVector[0];
         this.deleteBuffer = new Operation[0];
         this.operation = new Operation[0];
+        this.site_id = (new Random()).nextInt();
     }
 
     public CRDT[] getCrdt() {
