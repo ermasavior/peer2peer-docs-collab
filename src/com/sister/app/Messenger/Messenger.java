@@ -21,7 +21,6 @@ public class Messenger extends Thread {
         byte[] buffer = new byte[1024];
         MulticastSocket socket = new MulticastSocket(port);
         InetAddress group = InetAddress.getByName(ip);
-        socket.setInterface(InetAddress.getByName(InetAddress.getLocalHost().getHostAddress()));
         socket.joinGroup(group);
         while (true) {
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
@@ -67,10 +66,6 @@ public class Messenger extends Thread {
         DatagramSocket socket = new DatagramSocket();
         InetAddress group =InetAddress.getByName(ipAddress);
 
-        MulticastSocket multicastSocket = new MulticastSocket(port);
-        multicastSocket.setInterface(InetAddress.getByName(InetAddress.getLocalHost().getHostAddress()));
-        multicastSocket.joinGroup(group);
-
         ByteArrayOutputStream bStream = new ByteArrayOutputStream();
         ObjectOutput oo = new ObjectOutputStream(bStream);
         oo.writeObject(message);
@@ -78,8 +73,6 @@ public class Messenger extends Thread {
 
         byte[] msg = bStream.toByteArray();
         DatagramPacket packet = new DatagramPacket(msg, msg.length, group, port);
-        multicastSocket.send(packet);
-        multicastSocket.leaveGroup(group);
         socket.send(packet);
         socket.close();
     }
