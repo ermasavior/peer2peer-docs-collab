@@ -61,7 +61,11 @@ public class GUIController {
         char newChar;
 
         if (keyCode == KeyCode.BACK_SPACE) {
+<<<<<<< HEAD
             int idx = this.editorTextArea.getCaretPosition() -1;
+=======
+            int idx = this.editorTextArea.getCaretPosition() - 1;
+>>>>>>> cf25fab32c5c6998c4f95afe6993e362a540c8dc
             System.out.println(idx);
             System.out.println("Backspace pressed");
             type = "Delete";

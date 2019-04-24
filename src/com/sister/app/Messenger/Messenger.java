@@ -20,7 +20,7 @@ public class Messenger extends Thread {
         byte[] buffer = new byte[1024];
         MulticastSocket socket = new MulticastSocket(port);
         InetAddress group = InetAddress.getByName(ip);
-        socket.joinGroup(group);
+//        socket.joinGroup(group);
         while (true) {
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
             socket.receive(packet);
@@ -30,7 +30,11 @@ public class Messenger extends Thread {
                 Operation messageClass = (Operation) iStream.readObject();
                 iStream.close();
                 System.out.println(messageClass.toString());
+<<<<<<< HEAD
                 if(!packet.getAddress().equals(InetAddress.getLocalHost())){
+=======
+                if(messageClass.getSite_id() != controller.site_id){
+>>>>>>> cf25fab32c5c6998c4f95afe6993e362a540c8dc
                     controller.apply(messageClass);
                     System.out.println("CRDT::"  + controller.CRDTToString());
                     GUIController.guiController.updateText(controller.CRDTToString());
@@ -42,7 +46,7 @@ public class Messenger extends Thread {
                 break;
             }
         }
-        socket.leaveGroup(group);
+//        socket.leaveGroup(group);
         socket.close();
     }
 
