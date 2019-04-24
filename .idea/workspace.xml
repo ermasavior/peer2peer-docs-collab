@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33b86ce2-b00f-4d3a-acc3-41e5269905f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRDT Collaborative Editing/CRDT/CRDT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRDT Collaborative Editing/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRDT Collaborative Editing/Operation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CRDT Collaborative Editing/VersionVector/VersionVector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CRDT/CRDT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/CRDT/CRDT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VersionVector/VersionVector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/VersionVector/VersionVector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sister/CRDT/CRDT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sister/app/CRDT/CRDT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sister/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sister/app/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sister/Messenger/BroadcastingClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sister/app/Messenger/BroadcastingClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sister/Messenger/BroadcastingServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sister/app/Messenger/BroadcastingServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sister/Messenger/EchoClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sister/app/Messenger/EchoClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sister/Messenger/EchoServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sister/app/Messenger/EchoServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sister/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sister/app/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sister/VersionVector/VersionVector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sister/app/VersionVector/VersionVector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sister/gui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sister/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,28 +26,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Operation.java">
+        <entry file="file://$PROJECT_DIR$/src/com/sister/app/Operation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/CRDT/CRDT.java">
+        <entry file="file://$PROJECT_DIR$/src/com/sister/app/CRDT/CRDT.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/com/sister/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="230">
+              <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,10 +56,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/GUIController.java">
+        <entry file="file://$PROJECT_DIR$/src/com/sister/gui/GUIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+            <state relative-caret-position="-255">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,29 +68,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/App.java">
+        <entry file="file://$PROJECT_DIR$/src/com/sister/app/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding>
+                <element signature="e#99#100#0" expanded="true" />
+                <element signature="e#151#152#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/MainWindow.fxml">
+        <entry file="file://$PROJECT_DIR$/src/com/sister/gui/EditorWindow.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="95" selection-start-line="20" selection-start-column="95" selection-end-line="20" selection-end-column="95" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/EditorWindow.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="33" column="61" lean-forward="true" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+            <state relative-caret-position="617">
+              <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -106,13 +100,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/Controller.java">
+        <entry file="file://$PROJECT_DIR$/src/com/sister/app/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4106">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="85">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sister/app/Messenger/BroadcastingServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-177">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/sister/app/Messenger/EchoClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -167,6 +179,11 @@
         <option value="$PROJECT_DIR$/src/app/CRDT/CRDT.java" />
         <option value="$PROJECT_DIR$/src/app/Controller.java" />
         <option value="$PROJECT_DIR$/src/app/App.java" />
+        <option value="$PROJECT_DIR$/src/Messenger/UDPTest.java" />
+        <option value="$PROJECT_DIR$/src/com/sister/gui/GUIController.java" />
+        <option value="$PROJECT_DIR$/src/com/sister/Controller.java" />
+        <option value="$PROJECT_DIR$/src/com/sister/App.java" />
+        <option value="$PROJECT_DIR$/src/com/sister/Main.java" />
       </list>
     </option>
   </component>
@@ -198,19 +215,20 @@
               <item name="peer2peer-collaborative-editing" type="b2602c69:ProjectViewProjectNode" />
               <item name="peer2peer-collaborative-editing" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sister" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="peer2peer-collaborative-editing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="peer2peer-collaborative-editing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sister" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="peer2peer-collaborative-editing" type="b2602c69:ProjectViewProjectNode" />
               <item name="peer2peer-collaborative-editing" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="CRDT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="peer2peer-collaborative-editing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="peer2peer-collaborative-editing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sister" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -255,11 +273,11 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sister.gui.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.sister.Main" />
       <module name="CRDT Collaborative Editing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sister.gui.*" />
+          <option name="PATTERN" value="com.sister.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -307,13 +325,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54374000" />
+    <option name="totallyTimeSpent" value="59392000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20080972" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20080972" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -322,7 +340,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23268206" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23268206" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -331,7 +349,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32972974" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3285968" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -356,7 +374,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/VersionVector/VersionVector.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sister/app/VersionVector/VersionVector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
@@ -366,14 +384,7 @@
     <entry file="file://$PROJECT_DIR$/src/app.java" />
     <entry file="file://$PROJECT_DIR$/src/gui/EditorView.fxml" />
     <entry file="file://$PROJECT_DIR$/src/gui/EditorView.java" />
-    <entry file="file://$PROJECT_DIR$/src/app/Operation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/MainWindow.fxml">
+    <entry file="file://$PROJECT_DIR$/src/com/sister/gui/MainWindow.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="95" selection-start-line="20" selection-start-column="95" selection-end-line="20" selection-end-column="95" />
@@ -388,55 +399,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/CRDT/CRDT.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sister/app/CRDT/CRDT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/app/App.java" />
+    <entry file="file://$PROJECT_DIR$/src/Messenger/UDPTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="7">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="12" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sister/app/Messenger/BroadcastingServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4106">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-177">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/EditorWindow.fxml">
+    <entry file="file://$PROJECT_DIR$/src/com/sister/app/Messenger/EchoClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="61" lean-forward="true" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sister/gui/EditorWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="69" column="23" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GUIController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sister/app/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/App.java">
+    <entry file="file://$PROJECT_DIR$/src/com/sister/app/Operation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sister/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sister/gui/GUIController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sister/app/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#99#100#0" expanded="true" />
+            <element signature="e#151#152#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

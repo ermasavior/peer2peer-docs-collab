@@ -1,7 +1,7 @@
-package com.sister;
+package com.sister.app;
 
-import com.sister.CRDT.CRDT;
-import com.sister.VersionVector.VersionVector;
+import com.sister.app.CRDT.CRDT;
+import com.sister.app.VersionVector.VersionVector;
 
 public class Controller {
     // bikin input array crdt langsung input version vectornya
@@ -16,6 +16,13 @@ public class Controller {
         this.deleteBuffer = deleteBuffer;
         this.operation = operation;
         this.versionVector = versionVector;
+    }
+
+    public Controller() {
+        this.crdt = new CRDT[0];
+        this.versionVector = new VersionVector[0];
+        this.deleteBuffer = new Operation[0];
+        this.operation = new Operation[0];
     }
 
     public void printCRDT(){

@@ -1,4 +1,4 @@
-package com.sister;
+package com.sister.app;
 
 public class Operation {
     //    site-id: sumber operasi
