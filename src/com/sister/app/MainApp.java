@@ -16,7 +16,7 @@ public class MainApp {
         this.site_id = 0; //Minta messenger
         this.counter = 0;
 
-        this.appMessenger.run();
+        this.appMessenger.start();
     }
 
     public void sendOperation(String type, int pos, char value) {

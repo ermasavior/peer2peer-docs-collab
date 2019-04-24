@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,9 +19,9 @@ public class GUIController {
     private MainApp mainApp;
     private String collaborationCode = "";
 
-    public GUIController() throws IOException {
-        this.mainApp = new MainApp();
-    }
+//    public GUIController() throws IOException {
+//        this.mainApp = new MainApp();
+//    }
 
     @FXML
     public TextField joinTextField;
@@ -46,6 +48,30 @@ public class GUIController {
         this.collaborationCode = joinTextField.getText();
         System.out.println("Join docs: " + this.collaborationCode);
         goToNewPage("EditorWindow.fxml");
+    }
+
+    @FXML
+    public void addOperation (KeyEvent kEvent) {
+        KeyCode keyCode = kEvent.getCode();
+        String type;
+        char newChar;
+
+        if (keyCode == KeyCode.BACK_SPACE) {
+            int idx = this.editorTextArea.getCaretPosition();
+            System.out.println(idx);
+            System.out.println("Backspace pressed");
+            type = "Delete";
+            newChar = '0';
+            this.mainApp.sendOperation(type, idx, newChar);
+        } else if (!(keyCode.isFunctionKey() || keyCode.isArrowKey() || keyCode.isMediaKey() || keyCode.isModifierKey())) {
+            type = "Insert";
+            int idx = this.editorTextArea.getCaretPosition();
+            newChar = kEvent.getText().charAt(0);
+            System.out.println(idx);
+            System.out.println(newChar);
+            this.mainApp.sendOperation(type, idx, newChar);
+            System.out.println(this.mainApp.getCRDTText());
+        }
     }
 
     private void goToNewPage(String fxml) {
