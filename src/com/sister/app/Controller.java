@@ -141,7 +141,7 @@ public class Controller {
 
     // Melakukan pembaharuan app.CRDT
     public void updateCRDT(Operation OP) {
-        if (OP.type == "Insert") {
+        if (OP.type.equals("Insert")) {
             CRDT tempCRDT[] = new CRDT[this.crdt.length + 1];
             for (int i = 0; i < this.crdt.length; i++) {
                 if (i >= OP.position) {
@@ -154,7 +154,7 @@ public class Controller {
             tempCRDT[OP.position] = new CRDT(OP.site_id, OP.value, OP.position);
             copyCRDT(tempCRDT);
             updateVersionVector(OP);
-        } else if (OP.type == "Delete") {
+        } else if (OP.type.equals("Delete")) {
             CRDT tempCRDT[] = new CRDT[this.crdt.length - 1];
             for (int i = 0; i < this.crdt.length; i++) {
                 System.out.println(i);
@@ -229,7 +229,7 @@ public class Controller {
         int i = 0;
         boolean found = false;
         while (i < this.operation.length && !found) {
-            if(this.operation[i].type == "Insert") {
+            if(this.operation[i].type.equals("Insert")) {
                 boolean ada = false;
                 int j = 0;
                 while(j < this.versionVector.length && !ada){
@@ -306,7 +306,7 @@ public class Controller {
         int i = 0;
         while (i < operation.length) {
 //            if (isVerified(op)) {
-                if ((operation[i].type == "Delete" && !isDeleteNotAllowed()) || operation[i].type == "Insert") {
+                if ((operation[i].type.equals("Delete") && !isDeleteNotAllowed()) || operation[i].type.equals("Insert")) {
                     System.out.println("Not Delete Buffer");
                     updateCRDT(operation[i]);
                     System.out.println("update?");
@@ -351,7 +351,7 @@ public class Controller {
 //        c.updateCRDT(c.operation[1]);
 //        c.delOperation(c.operation[1]);
 
-//        if(c.operation[0].type == "Delete" && !c.isDeleteNotAllowed()) {
+//        if(c.operation[0].type.equals(Delete" && !c.isDeleteNotAllowed()) {
 //            System.out.println("CIK");
 //            c.updateCRDT(c.operation[0]);
 //            c.delOperation(c.operation[0]);
