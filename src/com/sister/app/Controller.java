@@ -152,7 +152,6 @@ public class Controller {
         } else if (OP.type.equals("Delete")) {
             CRDT tempCRDT[] = new CRDT[this.crdt.length - 1];
             for (int i = 0; i < this.crdt.length; i++) {
-                System.out.println(i);
                 if (i > OP.position) {
                     this.crdt[i].position --;
                     tempCRDT[i - 1] = this.crdt[i];

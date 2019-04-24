@@ -61,12 +61,12 @@ public class GUIController {
         char newChar;
 
         if (keyCode == KeyCode.BACK_SPACE) {
-            int idx = this.editorTextArea.getCaretPosition();
-            System.out.println(idx-1);
+            int idx = this.editorTextArea.getCaretPosition() -1;
+            System.out.println(idx);
             System.out.println("Backspace pressed");
             type = "Delete";
             newChar = '0';
-            this.mainApp.sendOperation(type, idx-1, newChar);
+            this.mainApp.sendOperation(type, idx, newChar);
             System.out.println(this.mainApp.getCRDTText());
 
         } else if (!(keyCode.isFunctionKey() || keyCode.isArrowKey() || keyCode.isMediaKey() || keyCode.isModifierKey())) {
@@ -92,28 +92,6 @@ public class GUIController {
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-}
-
-class GUIThread extends Thread {
-
-    private MainApp mainApp;
-    public TextArea editorTextArea;
-
-    public GUIThread(MainApp mainApp, TextArea editorTextArea) {
-        this.mainApp = mainApp;
-        this.editorTextArea = editorTextArea;
-    }
-
-    @Override
-    public void run() {
-        while(true) {
-            String CRDTText = this.mainApp.getCRDTText();
-//            System.out.println("CEKKKK "+CRDTText);
-            if (this.editorTextArea != null) {
-//                this.editorTextArea.setText(CRDTText);
-            }
         }
     }
 }
