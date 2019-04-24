@@ -28,11 +28,10 @@ Fungsi: menangani konflik pada urutan operasi akibat latency.
 3. Deletion Buffer: site_id (integer), value (char), position (integer), counter (char) <br> Fungsi: menyimpan operasi delete yang belum dijalankan untuk mengatasi konflik.
 
 ## Analisis Solusi
+Pada program ini, komputer harus dalam satu jaringan karena program ini menggunakan multicast. Untuk solusi lebih baik, dapat dilakukan antar jaringan.
 
-
-## Kasus Uji
-
-## Screenshot
+## Kasus Uji dan Screenshot
+Terdapat pada folder img
 
 ## Pembagian Tugas
 | NIM      | Nama                   | Deskripsi Tugas                        | Persentase |

@@ -20,7 +20,7 @@ public class Messenger extends Thread {
         byte[] buffer = new byte[1024];
         MulticastSocket socket = new MulticastSocket(port);
         InetAddress group = InetAddress.getByName(ip);
-        socket.joinGroup(group);
+//        socket.joinGroup(group);
         while (true) {
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
             socket.receive(packet);
@@ -42,7 +42,7 @@ public class Messenger extends Thread {
                 break;
             }
         }
-        socket.leaveGroup(group);
+//        socket.leaveGroup(group);
         socket.close();
     }
 
